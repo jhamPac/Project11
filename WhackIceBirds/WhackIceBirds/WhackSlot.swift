@@ -58,6 +58,21 @@ class WhackSlot: SKNode
         }
     }
     
+    func hit()
+    {
+        isHit = true
+        
+        let delay = SKAction.waitForDuration(0.25)
+        let hide = SKAction.moveByX(0, y: -80, duration: 0.5)
+        
+        // this is because show method does a check if its visible or not; if not run the show on the node
+        let notVisible = SKAction.runBlock { [unowned self] in self.visible = false }
+        
+        let penguinHideSequence = SKAction.sequence([delay, hide, notVisible])
+        
+        charNode.runAction(penguinHideSequence)
+    }
+    
     func hide()
     {
         if !visible { return }

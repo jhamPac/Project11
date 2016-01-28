@@ -51,7 +51,26 @@ class GameScene: SKScene
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
     {
-    
+        print(touches.description)
+        print(event)
+        
+        if let touch = touches.first
+        {
+            let location = touch.locationInNode(self)
+            let nodes = nodesAtPoint(location)
+            
+            for node in nodes
+            {
+                if node.name == "charFriend"
+                {
+                    // no whacking
+                }
+                else if node.name == "charEnemy"
+                {
+                    // yes whacking
+                }
+            }
+        }
     }
     
     func createSlotAt(pos: CGPoint)
@@ -82,10 +101,9 @@ class GameScene: SKScene
         let maxDelay = popupTime * 2
         
         let dl = RandomDouble(min: minDelay, max: maxDelay)
-        let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, Int64(dl * Double(NSEC_PER_SEC)))
         
-        dispatch_after(dispatchTime, dispatch_get_main_queue()) {
-                [unowned self] in
+        RunAfterDelay(dl) {
+            [unowned self] in
             self.createEnemy()
         }
     }
