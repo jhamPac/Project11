@@ -90,8 +90,8 @@
 			children = (
 				DA41F9A71C597AF5007D3042 /* AppDelegate.swift */,
 				DA41F9A91C597AF5007D3042 /* GameScene.sks */,
-				DA41F9AB1C597AF5007D3042 /* GameScene.swift */,
 				DA41F9AD1C597AF5007D3042 /* GameViewController.swift */,
+				DA41F9AB1C597AF5007D3042 /* GameScene.swift */,
 				DA41F9DA1C59839F007D3042 /* WhackSlot.swift */,
 				DA41F9AF1C597AF5007D3042 /* Main.storyboard */,
 				DA41F9B21C597AF5007D3042 /* Assets.xcassets */,
