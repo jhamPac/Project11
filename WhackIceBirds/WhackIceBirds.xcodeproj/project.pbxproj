@@ -29,6 +29,7 @@
 		DA41F9D81C597B8F007D3042 /* whackMask.png in Resources */ = {isa = PBXBuildFile; fileRef = DA41F9CA1C597B8F007D3042 /* whackMask.png */; };
 		DA41F9D91C597B8F007D3042 /* whackMask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA41F9CB1C597B8F007D3042 /* whackMask@2x.png */; };
 		DA41F9DB1C59839F007D3042 /* WhackSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA41F9DA1C59839F007D3042 /* WhackSlot.swift */; };
+		DA41F9DD1C5AA96C007D3042 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA41F9DC1C5AA96C007D3042 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		DA41F9CA1C597B8F007D3042 /* whackMask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whackMask.png; sourceTree = "<group>"; };
 		DA41F9CB1C597B8F007D3042 /* whackMask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whackMask@2x.png"; sourceTree = "<group>"; };
 		DA41F9DA1C59839F007D3042 /* WhackSlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhackSlot.swift; sourceTree = "<group>"; };
+		DA41F9DC1C5AA96C007D3042 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				DA41F9AD1C597AF5007D3042 /* GameViewController.swift */,
 				DA41F9AB1C597AF5007D3042 /* GameScene.swift */,
 				DA41F9DA1C59839F007D3042 /* WhackSlot.swift */,
+				DA41F9DC1C5AA96C007D3042 /* Helper.swift */,
 				DA41F9AF1C597AF5007D3042 /* Main.storyboard */,
 				DA41F9B21C597AF5007D3042 /* Assets.xcassets */,
 				DA41F9B41C597AF5007D3042 /* LaunchScreen.storyboard */,
@@ -212,6 +215,7 @@
 			files = (
 				DA41F9AC1C597AF5007D3042 /* GameScene.swift in Sources */,
 				DA41F9AE1C597AF5007D3042 /* GameViewController.swift in Sources */,
+				DA41F9DD1C5AA96C007D3042 /* Helper.swift in Sources */,
 				DA41F9DB1C59839F007D3042 /* WhackSlot.swift in Sources */,
 				DA41F9A81C597AF5007D3042 /* AppDelegate.swift in Sources */,
 			);
