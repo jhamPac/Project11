@@ -20,10 +20,10 @@ class GameScene: SKScene
         }
     }
     
+    // this is like the main entry point; load this scence in viewDidLoad in the controller
     override func didMoveToView(view: SKView)
     {
         let delay = 1.0
-        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC)))
         
         let background = SKSpriteNode(imageNamed: "whackBackground")
         background.position = CGPoint(x: 512, y: 384)
@@ -43,7 +43,8 @@ class GameScene: SKScene
         for i in 0..<5 { createSlotAt(CGPoint(x: 100 + (i * 170), y: 230)) }
         for i in 0..<4 { createSlotAt(CGPoint(x: 180 + (i * 170), y: 140)) }
         
-        dispatch_after(time, dispatch_get_main_queue()) { [unowned self] in
+        RunAfterDelay(delay) {
+            [unowned self] in
             self.createEnemy()
         }
     }
@@ -61,6 +62,7 @@ class GameScene: SKScene
         slots.append(slot)
     }
     
+    // this function gets called repeatedly with a delay
     func createEnemy()
     {
         popupTime *= 0.991
@@ -69,15 +71,21 @@ class GameScene: SKScene
         slots = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(slots) as! [WhackSlot]
         slots[0].show(hideTime: popupTime)
         
+        // so for a very call do one of this one offs; if the condition passes run function, if not we don't care
         if RandomInt(min: 0, max: 12) > 4 { slots[1].show(hideTime: popupTime) }
         if RandomInt(min: 0, max: 12) > 8 {  slots[2].show(hideTime: popupTime) }
         if RandomInt(min: 0, max: 12) > 10 { slots[3].show(hideTime: popupTime) }
-        if RandomInt(min: 0, max: 12) > 11 { slots[4].show(hideTime: popupTime)    }
+        if RandomInt(min: 0, max: 12) > 11 { slots[4].show(hideTime: popupTime) }
         
+        // get a min and max of the dynamic popupTime popupTime * make me smaller with every call
         let minDelay = popupTime / 2.0
         let maxDelay = popupTime * 2
         
-        RunAfterDelay(RandomDouble(min: minDelay, max: maxDelay)) { [unowned self] in
+        let dl = RandomDouble(min: minDelay, max: maxDelay)
+        let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, Int64(dl * Double(NSEC_PER_SEC)))
+        
+        dispatch_after(dispatchTime, dispatch_get_main_queue()) {
+                [unowned self] in
             self.createEnemy()
         }
     }
