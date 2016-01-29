@@ -74,8 +74,8 @@
 		DA41F99B1C597AF5007D3042 = {
 			isa = PBXGroup;
 			children = (
-				DA41F9A61C597AF5007D3042 /* WhackIceBirds */,
 				DA41F9A51C597AF5007D3042 /* Products */,
+				DA41F9A61C597AF5007D3042 /* WhackIceBirds */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,17 +90,15 @@
 		DA41F9A61C597AF5007D3042 /* WhackIceBirds */ = {
 			isa = PBXGroup;
 			children = (
-				DA41F9A71C597AF5007D3042 /* AppDelegate.swift */,
-				DA41F9A91C597AF5007D3042 /* GameScene.sks */,
-				DA41F9AD1C597AF5007D3042 /* GameViewController.swift */,
-				DA41F9AB1C597AF5007D3042 /* GameScene.swift */,
-				DA41F9DA1C59839F007D3042 /* WhackSlot.swift */,
-				DA41F9DC1C5AA96C007D3042 /* Helper.swift */,
-				DA41F9AF1C597AF5007D3042 /* Main.storyboard */,
-				DA41F9B21C597AF5007D3042 /* Assets.xcassets */,
-				DA41F9B41C597AF5007D3042 /* LaunchScreen.storyboard */,
-				DA41F9B71C597AF5007D3042 /* Info.plist */,
 				DA41F9BD1C597B8F007D3042 /* Content */,
+				DA41F9DE1C5BD8B4007D3042 /* Support */,
+				DA41F9A91C597AF5007D3042 /* GameScene.sks */,
+				DA41F9AB1C597AF5007D3042 /* GameScene.swift */,
+				DA41F9AD1C597AF5007D3042 /* GameViewController.swift */,
+				DA41F9DC1C5AA96C007D3042 /* Helper.swift */,
+				DA41F9B41C597AF5007D3042 /* LaunchScreen.storyboard */,
+				DA41F9AF1C597AF5007D3042 /* Main.storyboard */,
+				DA41F9DA1C59839F007D3042 /* WhackSlot.swift */,
 			);
 			path = WhackIceBirds;
 			sourceTree = "<group>";
@@ -124,6 +122,16 @@
 				DA41F9CB1C597B8F007D3042 /* whackMask@2x.png */,
 			);
 			path = Content;
+			sourceTree = "<group>";
+		};
+		DA41F9DE1C5BD8B4007D3042 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				DA41F9A71C597AF5007D3042 /* AppDelegate.swift */,
+				DA41F9B21C597AF5007D3042 /* Assets.xcassets */,
+				DA41F9B71C597AF5007D3042 /* Info.plist */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +238,7 @@
 				DA41F9B01C597AF5007D3042 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		DA41F9B41C597AF5007D3042 /* LaunchScreen.storyboard */ = {
@@ -238,6 +247,7 @@
 				DA41F9B51C597AF5007D3042 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -330,7 +340,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = WhackIceBirds/Info.plist;
+				INFOPLIST_FILE = WhackIceBirds/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jhmpac.WhackIceBirds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -341,7 +351,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = WhackIceBirds/Info.plist;
+				INFOPLIST_FILE = WhackIceBirds/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jhmpac.WhackIceBirds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -367,6 +377,7 @@
 				DA41F9BC1C597AF5007D3042 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
