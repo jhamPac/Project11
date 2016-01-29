@@ -92,13 +92,13 @@
 			children = (
 				DA41F9BD1C597B8F007D3042 /* Content */,
 				DA41F9DE1C5BD8B4007D3042 /* Support */,
-				DA41F9A91C597AF5007D3042 /* GameScene.sks */,
-				DA41F9AB1C597AF5007D3042 /* GameScene.swift */,
-				DA41F9AD1C597AF5007D3042 /* GameViewController.swift */,
 				DA41F9DC1C5AA96C007D3042 /* Helper.swift */,
+				DA41F9A91C597AF5007D3042 /* GameScene.sks */,
+				DA41F9AD1C597AF5007D3042 /* GameViewController.swift */,
+				DA41F9AB1C597AF5007D3042 /* GameScene.swift */,
+				DA41F9DA1C59839F007D3042 /* WhackSlot.swift */,
 				DA41F9B41C597AF5007D3042 /* LaunchScreen.storyboard */,
 				DA41F9AF1C597AF5007D3042 /* Main.storyboard */,
-				DA41F9DA1C59839F007D3042 /* WhackSlot.swift */,
 			);
 			path = WhackIceBirds;
 			sourceTree = "<group>";

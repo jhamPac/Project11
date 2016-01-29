@@ -14,6 +14,7 @@ class GameScene: SKScene
     var slots = [WhackSlot]()
     var gameScore: SKLabelNode!
     var popupTime = 0.85
+    var numRounds = 0
     var score: Int = 0 {
         didSet {
             gameScore.text = "Score: \(score)"
@@ -51,9 +52,6 @@ class GameScene: SKScene
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
     {
-        print(touches.description)
-        print(event)
-        
         if let touch = touches.first
         {
             let location = touch.locationInNode(self)
@@ -64,10 +62,30 @@ class GameScene: SKScene
                 if node.name == "charFriend"
                 {
                     // no whacking
+                    let whackSlot = node.parent!.parent as! WhackSlot
+                    if !whackSlot.visible { continue }
+                    if whackSlot.isHit { continue }
+                    
+                    whackSlot.hit()
+                    score -= 5
+                    
+                    runAction(SKAction.playSoundFileNamed("whackBad.caf", waitForCompletion: false))
+                    
                 }
                 else if node.name == "charEnemy"
                 {
                     // yes whacking
+                    let whackSlot = node.parent!.parent as! WhackSlot
+                    if !whackSlot.visible {continue}
+                    if whackSlot.isHit {continue}
+                    
+                    whackSlot.charNode.xScale = 0.85
+                    whackSlot.charNode.yScale = 0.85
+                    
+                    whackSlot.hit()
+                    ++score
+                    
+                    runAction(SKAction.playSoundFileNamed("whack.caf", waitForCompletion: false))
                 }
             }
         }
@@ -84,6 +102,24 @@ class GameScene: SKScene
     // this function gets called repeatedly with a delay
     func createEnemy()
     {
+        ++numRounds
+        
+        if numRounds >= 30
+        {
+            for slot in slots
+            {
+                slot.hide()
+            }
+            
+            let gameOver = SKSpriteNode(imageNamed: "gameOver")
+            gameOver.position = CGPoint(x: 512, y: 384)
+            gameOver.zPosition = 1
+            addChild(gameOver)
+            
+            // after this don't continue create enemey method
+            return
+        }
+        
         popupTime *= 0.991
         
         // Every time we call createEnemy we randomize the array of penguin nodes
